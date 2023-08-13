@@ -1,0 +1,9 @@
+<launch>
+  <param name="use_sim_time" value="true"/>
+  <arg name="model_path" default="$(find sparseinst_ros)/sparse_inst_r50_giam_aug_2b7d68.pth"/>
+  <arg name="config_path" default="$(find sparseinst_ros)/configs/sparse_inst_r50_giam.yaml" />
+  <node pkg="sparseinst_ros" name="sparseinst_ros" type="sparseinst_ros.py" output="screen">
+    <param name="model_path" value="$(arg model_path)"/>
+    <param name="config_path" value="$(arg config_path)"/>
+  </node>
+</launch>

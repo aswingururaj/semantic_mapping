@@ -1,0 +1,13 @@
+<launch>
+    <arg name="bag_file" default="/home/aswingururaj/static_map.bag"/>
+    <arg name="node_start_delay" default="2.0" />
+  
+    <include file="$(find hydra_dsg_builder)/launch/hydra_realsense_builder.launch"/>
+    <include file="$(find object_processor)/launch/orb_slam2_d435_rgbd.launch"/>
+    <include file="$(find object_processor)/launch/sparseinst_ros.launch"/>
+    
+    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg bag_file)"/>
+    
+    <include file="$(find object_processor)/launch/object_processor.launch" pass_all_args="true"/>
+
+</launch>

@@ -1,0 +1,46 @@
+<launch>
+  <param name="use_sim_time" value="true"/>
+  
+  <arg name="static_mapping" default="true"/>
+
+  <arg name="node_start_delay" default="0.0" />
+
+  <arg name="config_path" default="$(find object_processor)/config/mask_rcnn_mapping.csv"/>
+  <arg name="scene_graph_path" default="$(find object_processor)/scene_graphs/"/>
+  <arg name="hydra_object_info_topic" default="/incremental_dsg_builder_node/object_info"/>
+  <arg name="room" default="kitchen"/>
+  
+  <arg name="world_frame" default="world"/>
+  <arg name="camera_frame" default="camera_color_optical_frame"/>
+  <arg name="input_scene_graph" default="$(find object_processor)/scene_graphs/static_objects.pkl"/>
+  <arg name="output_scene_graph_name" default="updated_scene_graph.pkl"/>
+  <arg name="min_num_detections" default="2"/>
+  <arg name="time_buffer_secs" default="3"/>
+  <arg name="reset_time_secs" default="150"/>
+  <arg name="segmentation_topic" default="/sparseinst_seg"/>
+  
+  <node pkg="object_processor" name="correct_tf" type="stretch_tf_correction.py" output="screen"/>
+  
+  <node pkg="object_processor" name="static_map" type="static_map.py" output="screen" if="$(arg static_mapping)" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' ">
+    <param name="config_path" value="$(arg config_path)"/>
+    <param name="scene_graph_path" value="$(arg scene_graph_path)"/>
+    <param name="hydra_object_info_topic" value="$(arg hydra_object_info_topic)"/>
+    <param name="room" value="$(arg room)"/>
+  </node>
+  
+  <node pkg="object_processor" name="update_scene_graph" type="update_scene_graph.py" output="screen" unless="$(arg static_mapping)" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " >
+    <param name="config_path" value="$(arg config_path)"/>
+    <param name="scene_graph_path" value="$(arg scene_graph_path)"/>
+    <param name="hydra_object_info_topic" value="$(arg hydra_object_info_topic)"/>
+    <param name="room" value="$(arg room)"/>
+    <param name="world_frame" value="$(arg world_frame)"/>
+    <param name="camera_frame" value="$(arg camera_frame)"/>
+    <param name="input_scene_graph" value="$(arg input_scene_graph)"/>
+    <param name="output_scene_graph_name" value="$(arg output_scene_graph_name)"/>
+    <param name="min_num_detections" value="$(arg min_num_detections)"/>
+    <param name="time_buffer_secs" value="$(arg time_buffer_secs)"/>
+    <param name="reset_time_secs" value="$(arg reset_time_secs)"/>
+    <param name="segmentation_topic" value="$(arg segmentation_topic)"/>
+  </node> 
+
+</launch>
