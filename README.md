@@ -80,7 +80,9 @@ rosbag play --clock static_scene.bag
 
 Running the above commands with static scene will generate a scene graph for static environment. For subsequent runs, this scene graph will be used as a basis to keep track of dynamic objects. Set ```static_mapping``` param to ```false``` in ```object_processor.launch``` for the other runs.
 
-## Video
+## Videos
+
+https://github.com/aswingururaj/semantic_mapping/assets/30689501/1394c7c2-1e97-4906-abde-c3456fcbcd77
 
 https://github.com/aswingururaj/semantic_mapping/assets/30689501/166e6f36-ae09-44e4-8918-dd7595b92823
 
