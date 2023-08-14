@@ -66,3 +66,11 @@
         path = teaser_plusplus       
         url = https://github.com/MIT-SPARK/TEASER-plusplus.git       
         version = feature/hydra
+[submodule "kimera_semantics"]
+        path = kimera_semantics
+        url = https://github.com/aswingururaj/kimera_semantics.git
+        version = master
+[submodule "orb_slam_2_ros"]
+        path = orb_slam_2_ros
+        url = https://github.com/aswingururaj/orb_slam_2_ros.git
+        version = master
