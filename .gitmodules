@@ -2,3 +2,68 @@
 	path = catkin_simple
 	url = https://github.com/catkin/catkin_simple.git
 	version = master
+[submodule "dbow2_catkin"]
+        path = dbow2_catkin
+        url = https://github.com/marcusabate/dbow2_catkin.git
+        version = master
+[submodule "eigen_catkin"]
+        path = eigen_catkin
+        url = https://github.com/ethz-asl/eigen_catkin.git
+        version = master
+[submodule "eigen_checks"]
+        path = eigen_checks
+        url = https://github.com/ethz-asl/eigen_checks.git
+        version = master
+[submodule "gflags_catkin"]
+        path = gflags_catkin 
+        url = https://github.com/ethz-asl/gflags_catkin.git
+        version = master
+[submodule "glog_catkin"]
+        path = glog_catkin 
+        url = https://github.com/ethz-asl/glog_catkin.git
+        version = master
+[submodule "gtsam"]
+        path = gtsam 
+        url = https://github.com/borglab/gtsam.git
+        version = develop
+# Last tested commit: 69a3a75195b65356d6e56669e5199d325c7962c9
+[submodule "kimera_pgmo"]
+        path = kimera_pgmo 
+        url = https://github.com/MIT-SPARK/Kimera-PGMO.git
+        version = master
+[submodule "kimera_rpgo"]
+	path = kimera_rpgo
+	url = https://github.com/MIT-SPARK/Kimera-RPGO.git
+	version = master
+[submodule "mesh_rviz_plugins"]
+        path = mesh_rviz_plugins
+        url = https://github.com/aswingururaj/mesh_rviz_plugins.git
+        version = master
+[submodule "mesh_tools"]
+        path = mesh_tools
+        url = https://github.com/yunzc/mesh_tools.git
+        version = master
+[submodule "minkindr"]
+        path = minkindr
+        url = https://github.com/ethz-asl/minkindr.git
+        version = master
+[submodule "minkindr_ros"]
+        path = mindkindr_ros
+        url = https://github.com/ethz-asl/minkindr_ros.git
+        version = master
+[submodule "pose_graph_tools"]
+        path = pose_graph_tools 
+        url = https://github.com/MIT-SPARK/pose_graph_tools.git
+        version = feature/hydra
+[submodule "spark_dsg"]
+        path = spark_dsg
+        url = https://github.com/MIT-SPARK/Spark-DSG.git
+        version = master
+[submodule "voxblox"]
+        path = voxblox       
+        url = https://github.com/MIT-SPARK/voxblox.git       
+        version = feature/hydra
+[submodule "teaser_pluslus"]
+        path = teaser_plusplus       
+        url = https://github.com/MIT-SPARK/TEASER-plusplus.git       
+        version = feature/hydra
