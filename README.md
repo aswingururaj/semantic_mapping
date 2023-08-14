@@ -78,4 +78,4 @@ Run the bags using:
 rosbag play --clock static_scene.bag
 ```
 
-Running the above commands with static scene will generate a scene graph for static environment. For subsequent runs, this scene graph will be used as a basis to keep track of dynamic objects. Set ```static_mapping``` param to ```true``` in ```object_processor.launch``` for the other runs.
+Running the above commands with static scene will generate a scene graph for static environment. For subsequent runs, this scene graph will be used as a basis to keep track of dynamic objects. Set ```static_mapping``` param to ```false``` in ```object_processor.launch``` for the other runs.
