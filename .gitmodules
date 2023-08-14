@@ -50,7 +50,6 @@
 [submodule "minkindr_ros"]
         path = mindkindr_ros
         url = https://github.com/ethz-asl/minkindr_ros.git
-        version = master
 [submodule "pose_graph_tools"]
         path = pose_graph_tools 
         url = https://github.com/MIT-SPARK/pose_graph_tools.git
